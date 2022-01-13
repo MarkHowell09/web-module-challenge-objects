@@ -31,7 +31,9 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
-
+console.log(createMenuItem('shakes', 3.50, 'Deserts'));
+console.log(createMenuItem('sushi', 10, 'Lunch'));
+console.log(createMenuItem('meat loaf', 7.50, 'Dinner'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -50,12 +52,18 @@ const burger = {
   price: 18, 
   category: "Lunch", 
   
-  discount: function(){
-
+  discount: function(customer){
+    if(customer === 'teacher'){
+      return 18 - this.price * 0.25;
+    }else if(customer === 'student'){
+      return 18 - this.price * 0.25;
+    }else{
+      return 18 - this.price * 0.10;
+    }
   }
 }
 
-
+console.log(burger.discount('teacher'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -74,8 +82,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
-
+console.log(reviews[5].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
@@ -83,9 +90,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
 
-
-
+console.log(reviews[7].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
